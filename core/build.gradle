@@ -1,14 +1,13 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion "29.0.2"
+    compileSdkVersion rootProject.ext.compileSdkVersion
 
     defaultConfig {
-        minSdkVersion 16
-        targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles 'consumer-rules.pro'
@@ -25,9 +24,24 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    api "androidx.appcompat:appcompat:$rootProject.ext.appcompat"
+    api "junit:junit:$rootProject.ext.junit"
+    api "androidx.test:runner:$rootProject.ext.testRunner"
+    api "androidx.test.espresso:espresso-core:$rootProject.ext.espressoCore"
+    api "androidx.constraintlayout:constraintlayout:$rootProject.ext.constraintlayout"
+    //multidex
+    api "com.android.support:multidex:$rootProject.ext.multidex"
+    // 今日头条屏幕适配
+//    api "me.jessyan:autosize:$rootProject.ext.autosize"
+    //Loading视图
+    api "com.wang.avi:library:$rootProject.ext.loading"
+    //刷新框架
+    api "com.scwang.smartrefresh:SmartRefreshLayout:$rootProject.ext.SmartRefreshLayout"
+    api "com.scwang.smartrefresh:SmartRefreshHeader:$rootProject.ext.SmartRefreshHeader"
+    api "com.google.code.gson:gson:$rootProject.ext.gson"
+    //brvah
+    api "androidx.recyclerview:recyclerview:$rootProject.ext.recyclerview"
+    api "com.github.CymChad:BaseRecyclerViewAdapterHelper:$rootProject.ext.BaseRecyclerViewAdapterHelper"
+    //klog日志
+    api "com.github.zhaokaiqiang.klog:library:$rootProject.ext.klog"
 }
