@@ -1,4 +1,4 @@
-package com.dimeno.core.mvp;
+package com.dimeno.core.utils;
 
 import android.app.Activity;
 import android.app.Dialog;

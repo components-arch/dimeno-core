@@ -12,3 +12,5 @@ Step 2. Add the dependency
 dependencies {
 	        implementation 'com.github.sdgSnow:common:Tag'
 	}
+注意事项：
+1.minSdkVersion 最低要设置19
