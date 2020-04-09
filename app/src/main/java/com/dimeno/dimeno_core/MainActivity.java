@@ -1,14 +1,31 @@
 package com.dimeno.dimeno_core;
 
-import androidx.appcompat.app.AppCompatActivity;
+import com.dimeno.core.mvp.BaseActivity;
 
-import android.os.Bundle;
-
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    protected int getLayout() {
+        return R.layout.activity_main;
+    }
+
+    @Override
+    protected void createPresenter() {
+
+    }
+
+    @Override
+    protected void initView() {
+
+    }
+
+    @Override
+    protected void initData() {
+        showShort("加载成功");
+    }
+
+    @Override
+    protected void refreshTodo() {
+
     }
 }
